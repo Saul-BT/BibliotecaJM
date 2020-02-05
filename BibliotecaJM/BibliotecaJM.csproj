@@ -56,6 +56,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Historico_prestamos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_Lectores.cs">
+      <DependentUpon>DS_Lectores.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_Lectores.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +148,12 @@
     <Compile Include="FM_Principal.Designer.cs">
       <DependentUpon>FM_Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FD_ListadoProvincias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FD_ListadoProvincias.Designer.cs">
+      <DependentUpon>FD_ListadoProvincias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioActual.cs" />
@@ -165,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FM_Principal.resx">
       <DependentUpon>FM_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FD_ListadoProvincias.resx">
+      <DependentUpon>FD_ListadoProvincias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

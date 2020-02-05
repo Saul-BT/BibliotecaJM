@@ -94,16 +94,17 @@ namespace BibliotecaJM
 
             if (resultadoDialogoConfirmacion == DialogResult.Yes)
             {
-                try
-                {
-                    lectoresBindingSource.RemoveCurrent();
-                    lectoresTableAdapter.Update(dS_Lectores.lectores);
+                    try
+                    {
+                        lectoresBindingSource.RemoveCurrent();
+
+                        lectoresTableAdapter.Update(dS_Lectores.lectores);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
         }
 
         private void bCancelar_Click(object sender, EventArgs e)
@@ -127,6 +128,19 @@ namespace BibliotecaJM
             ModoBusqueda();
         }
 
-        
+        private void lectoresDataGridView_CurrentCellChanged(object sender, EventArgs e)
+        {
+            provinciasTableAdapter.FillByID(dS_Provincias.provincias, int.Parse(provincia_lecTextBox.Text));
+            
+            provincia_nombre_lecTextBox.Text = dS_Provincias.provincias.Rows[0][1].ToString();
+        }
+
+        private void bAssistProvincia_Click(object sender, EventArgs e)
+        {
+            FD_ListadoProvincias listado = new FD_ListadoProvincias();
+            listado.ShowDialog();
+            provincia_lecTextBox.Text = listado.idProvincia;
+            provincia_nombre_lecTextBox.Text = listado.Provincia;
+        }
     }
 }

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace BibliotecaJM
 {
-    public partial class FM_Prestamos : BibliotecaJM.FM_Modelo
+    public partial class FM_Prestamos : FM_Modelo
     {
         private UsuarioActual usuarioActual;
 

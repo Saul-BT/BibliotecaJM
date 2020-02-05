@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label id_lecLabel;
             System.Windows.Forms.Label nombre_lecLabel;
             System.Windows.Forms.Label domicilio_lecLabel;
-            System.Windows.Forms.Label fecha_penalizacion_lecLabel;
+            System.Windows.Forms.Label provincia_lecLabel;
+            System.Windows.Forms.Label email_lecLabel;
+            System.Windows.Forms.Label fecha_nacimiento_lecLabel;
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
             this.lectoresDataGridView = new System.Windows.Forms.DataGridView();
@@ -52,18 +53,24 @@
             this.bEliminar = new System.Windows.Forms.Button();
             this.bModificar = new System.Windows.Forms.Button();
             this.gbEdicion = new System.Windows.Forms.GroupBox();
+            this.provincia_nombre_lecTextBox = new System.Windows.Forms.TextBox();
+            this.bAssistProvincia = new System.Windows.Forms.Button();
+            this.nombre_lecTextBox = new System.Windows.Forms.TextBox();
+            this.domicilio_lecTextBox = new System.Windows.Forms.TextBox();
+            this.provincia_lecTextBox = new System.Windows.Forms.TextBox();
+            this.email_lecTextBox = new System.Windows.Forms.TextBox();
+            this.fecha_nacimiento_lecDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.bCancelar = new System.Windows.Forms.Button();
             this.bAceptar = new System.Windows.Forms.Button();
             this.lectoresTableAdapter = new BibliotecaJM.DS_LectoresTableAdapters.lectoresTableAdapter();
             this.tableAdapterManager = new BibliotecaJM.DS_LectoresTableAdapters.TableAdapterManager();
-            this.id_lecTextBox = new System.Windows.Forms.TextBox();
-            this.nombre_lecTextBox = new System.Windows.Forms.TextBox();
-            this.domicilio_lecTextBox = new System.Windows.Forms.TextBox();
-            this.provincia_lecTextBox = new System.Windows.Forms.TextBox();
-            id_lecLabel = new System.Windows.Forms.Label();
+            this.dS_Provincias = new BibliotecaJM.DS_Provincias();
+            this.provinciasTableAdapter = new BibliotecaJM.DS_ProvinciasTableAdapters.provinciasTableAdapter();
             nombre_lecLabel = new System.Windows.Forms.Label();
             domicilio_lecLabel = new System.Windows.Forms.Label();
-            fecha_penalizacion_lecLabel = new System.Windows.Forms.Label();
+            provincia_lecLabel = new System.Windows.Forms.Label();
+            email_lecLabel = new System.Windows.Forms.Label();
+            fecha_nacimiento_lecLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lectoresDataGridView)).BeginInit();
@@ -72,43 +79,53 @@
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.gbEdicion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Provincias)).BeginInit();
             this.SuspendLayout();
-            // 
-            // id_lecLabel
-            // 
-            id_lecLabel.AutoSize = true;
-            id_lecLabel.Location = new System.Drawing.Point(32, 45);
-            id_lecLabel.Name = "id_lecLabel";
-            id_lecLabel.Size = new System.Drawing.Size(52, 13);
-            id_lecLabel.TabIndex = 0;
-            id_lecLabel.Text = "Id Lector:";
             // 
             // nombre_lecLabel
             // 
             nombre_lecLabel.AutoSize = true;
-            nombre_lecLabel.Location = new System.Drawing.Point(32, 71);
+            nombre_lecLabel.Location = new System.Drawing.Point(29, 40);
             nombre_lecLabel.Name = "nombre_lecLabel";
-            nombre_lecLabel.Size = new System.Drawing.Size(80, 13);
-            nombre_lecLabel.TabIndex = 2;
-            nombre_lecLabel.Text = "Nombre Lector:";
+            nombre_lecLabel.Size = new System.Drawing.Size(62, 13);
+            nombre_lecLabel.TabIndex = 10;
+            nombre_lecLabel.Text = "nombre lec:";
             // 
             // domicilio_lecLabel
             // 
             domicilio_lecLabel.AutoSize = true;
-            domicilio_lecLabel.Location = new System.Drawing.Point(32, 97);
+            domicilio_lecLabel.Location = new System.Drawing.Point(29, 66);
             domicilio_lecLabel.Name = "domicilio_lecLabel";
-            domicilio_lecLabel.Size = new System.Drawing.Size(85, 13);
-            domicilio_lecLabel.TabIndex = 4;
-            domicilio_lecLabel.Text = "Domicilio Lector:";
+            domicilio_lecLabel.Size = new System.Drawing.Size(67, 13);
+            domicilio_lecLabel.TabIndex = 12;
+            domicilio_lecLabel.Text = "domicilio lec:";
             // 
-            // fecha_penalizacion_lecLabel
+            // provincia_lecLabel
             // 
-            fecha_penalizacion_lecLabel.AutoSize = true;
-            fecha_penalizacion_lecLabel.Location = new System.Drawing.Point(32, 124);
-            fecha_penalizacion_lecLabel.Name = "fecha_penalizacion_lecLabel";
-            fecha_penalizacion_lecLabel.Size = new System.Drawing.Size(102, 13);
-            fecha_penalizacion_lecLabel.TabIndex = 6;
-            fecha_penalizacion_lecLabel.Text = "Fecha penalizacion:";
+            provincia_lecLabel.AutoSize = true;
+            provincia_lecLabel.Location = new System.Drawing.Point(29, 92);
+            provincia_lecLabel.Name = "provincia_lecLabel";
+            provincia_lecLabel.Size = new System.Drawing.Size(70, 13);
+            provincia_lecLabel.TabIndex = 14;
+            provincia_lecLabel.Text = "provincia lec:";
+            // 
+            // email_lecLabel
+            // 
+            email_lecLabel.AutoSize = true;
+            email_lecLabel.Location = new System.Drawing.Point(29, 118);
+            email_lecLabel.Name = "email_lecLabel";
+            email_lecLabel.Size = new System.Drawing.Size(51, 13);
+            email_lecLabel.TabIndex = 16;
+            email_lecLabel.Text = "email lec:";
+            // 
+            // fecha_nacimiento_lecLabel
+            // 
+            fecha_nacimiento_lecLabel.AutoSize = true;
+            fecha_nacimiento_lecLabel.Location = new System.Drawing.Point(29, 145);
+            fecha_nacimiento_lecLabel.Name = "fecha_nacimiento_lecLabel";
+            fecha_nacimiento_lecLabel.Size = new System.Drawing.Size(108, 13);
+            fecha_nacimiento_lecLabel.TabIndex = 18;
+            fecha_nacimiento_lecLabel.Text = "fecha nacimiento lec:";
             // 
             // tableLayoutPanel1
             // 
@@ -150,8 +167,12 @@
             this.lectoresDataGridView.DataSource = this.lectoresBindingSource;
             this.lectoresDataGridView.Location = new System.Drawing.Point(6, 134);
             this.lectoresDataGridView.Name = "lectoresDataGridView";
+            this.lectoresDataGridView.ReadOnly = true;
+            this.lectoresDataGridView.RowHeadersVisible = false;
+            this.lectoresDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.lectoresDataGridView.Size = new System.Drawing.Size(487, 461);
             this.lectoresDataGridView.TabIndex = 9;
+            this.lectoresDataGridView.CurrentCellChanged += new System.EventHandler(this.lectoresDataGridView_CurrentCellChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -165,6 +186,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre_lec";
             this.dataGridViewTextBoxColumn2.HeaderText = "nombre_lec";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // lectoresBindingSource
             // 
@@ -297,16 +319,20 @@
             // gbEdicion
             // 
             this.gbEdicion.AutoSize = true;
-            this.gbEdicion.Controls.Add(this.provincia_lecTextBox);
-            this.gbEdicion.Controls.Add(this.domicilio_lecTextBox);
+            this.gbEdicion.Controls.Add(this.provincia_nombre_lecTextBox);
+            this.gbEdicion.Controls.Add(this.bAssistProvincia);
+            this.gbEdicion.Controls.Add(nombre_lecLabel);
             this.gbEdicion.Controls.Add(this.nombre_lecTextBox);
-            this.gbEdicion.Controls.Add(this.id_lecTextBox);
+            this.gbEdicion.Controls.Add(domicilio_lecLabel);
+            this.gbEdicion.Controls.Add(this.domicilio_lecTextBox);
+            this.gbEdicion.Controls.Add(provincia_lecLabel);
+            this.gbEdicion.Controls.Add(this.provincia_lecTextBox);
+            this.gbEdicion.Controls.Add(email_lecLabel);
+            this.gbEdicion.Controls.Add(this.email_lecTextBox);
+            this.gbEdicion.Controls.Add(fecha_nacimiento_lecLabel);
+            this.gbEdicion.Controls.Add(this.fecha_nacimiento_lecDateTimePicker);
             this.gbEdicion.Controls.Add(this.bCancelar);
             this.gbEdicion.Controls.Add(this.bAceptar);
-            this.gbEdicion.Controls.Add(id_lecLabel);
-            this.gbEdicion.Controls.Add(nombre_lecLabel);
-            this.gbEdicion.Controls.Add(domicilio_lecLabel);
-            this.gbEdicion.Controls.Add(fecha_penalizacion_lecLabel);
             this.gbEdicion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbEdicion.Location = new System.Drawing.Point(508, 3);
             this.gbEdicion.Name = "gbEdicion";
@@ -315,23 +341,84 @@
             this.gbEdicion.TabStop = false;
             this.gbEdicion.Text = "Detalle";
             // 
+            // provincia_nombre_lecTextBox
+            // 
+            this.provincia_nombre_lecTextBox.Location = new System.Drawing.Point(189, 89);
+            this.provincia_nombre_lecTextBox.Name = "provincia_nombre_lecTextBox";
+            this.provincia_nombre_lecTextBox.Size = new System.Drawing.Size(242, 20);
+            this.provincia_nombre_lecTextBox.TabIndex = 21;
+            // 
+            // bAssistProvincia
+            // 
+            this.bAssistProvincia.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bAssistProvincia.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAssistProvincia.Location = new System.Drawing.Point(437, 89);
+            this.bAssistProvincia.Name = "bAssistProvincia";
+            this.bAssistProvincia.Size = new System.Drawing.Size(33, 20);
+            this.bAssistProvincia.TabIndex = 20;
+            this.bAssistProvincia.Text = "...";
+            this.bAssistProvincia.UseVisualStyleBackColor = false;
+            this.bAssistProvincia.Click += new System.EventHandler(this.bAssistProvincia_Click);
+            // 
+            // nombre_lecTextBox
+            // 
+            this.nombre_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "nombre_lec", true));
+            this.nombre_lecTextBox.Location = new System.Drawing.Point(151, 37);
+            this.nombre_lecTextBox.Name = "nombre_lecTextBox";
+            this.nombre_lecTextBox.Size = new System.Drawing.Size(319, 20);
+            this.nombre_lecTextBox.TabIndex = 11;
+            // 
+            // domicilio_lecTextBox
+            // 
+            this.domicilio_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "domicilio_lec", true));
+            this.domicilio_lecTextBox.Location = new System.Drawing.Point(151, 63);
+            this.domicilio_lecTextBox.Name = "domicilio_lecTextBox";
+            this.domicilio_lecTextBox.Size = new System.Drawing.Size(319, 20);
+            this.domicilio_lecTextBox.TabIndex = 13;
+            // 
+            // provincia_lecTextBox
+            // 
+            this.provincia_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "provincia_lec", true));
+            this.provincia_lecTextBox.Location = new System.Drawing.Point(151, 89);
+            this.provincia_lecTextBox.Name = "provincia_lecTextBox";
+            this.provincia_lecTextBox.Size = new System.Drawing.Size(32, 20);
+            this.provincia_lecTextBox.TabIndex = 15;
+            // 
+            // email_lecTextBox
+            // 
+            this.email_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "email_lec", true));
+            this.email_lecTextBox.Location = new System.Drawing.Point(151, 115);
+            this.email_lecTextBox.Name = "email_lecTextBox";
+            this.email_lecTextBox.Size = new System.Drawing.Size(319, 20);
+            this.email_lecTextBox.TabIndex = 17;
+            // 
+            // fecha_nacimiento_lecDateTimePicker
+            // 
+            this.fecha_nacimiento_lecDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.lectoresBindingSource, "fecha_nacimiento_lec", true));
+            this.fecha_nacimiento_lecDateTimePicker.Location = new System.Drawing.Point(151, 141);
+            this.fecha_nacimiento_lecDateTimePicker.Name = "fecha_nacimiento_lecDateTimePicker";
+            this.fecha_nacimiento_lecDateTimePicker.Size = new System.Drawing.Size(319, 20);
+            this.fecha_nacimiento_lecDateTimePicker.TabIndex = 19;
+            // 
             // bCancelar
             // 
-            this.bCancelar.Location = new System.Drawing.Point(83, 173);
+            this.bCancelar.Location = new System.Drawing.Point(32, 191);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(75, 23);
+            this.bCancelar.Size = new System.Drawing.Size(220, 474);
             this.bCancelar.TabIndex = 8;
             this.bCancelar.Text = "CANCELAR";
+            this.bCancelar.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.bCancelar.UseVisualStyleBackColor = true;
             this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
             // 
             // bAceptar
             // 
-            this.bAceptar.Location = new System.Drawing.Point(261, 173);
+            this.bAceptar.Location = new System.Drawing.Point(258, 191);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(75, 23);
+            this.bAceptar.Size = new System.Drawing.Size(212, 474);
             this.bAceptar.TabIndex = 8;
             this.bAceptar.Text = "ACEPTAR";
+            this.bAceptar.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
             // 
@@ -345,37 +432,14 @@
             this.tableAdapterManager.lectoresTableAdapter = this.lectoresTableAdapter;
             this.tableAdapterManager.UpdateOrder = BibliotecaJM.DS_LectoresTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // id_lecTextBox
+            // dS_Provincias
             // 
-            this.id_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "id_lec", true));
-            this.id_lecTextBox.Location = new System.Drawing.Point(151, 42);
-            this.id_lecTextBox.Name = "id_lecTextBox";
-            this.id_lecTextBox.Size = new System.Drawing.Size(100, 20);
-            this.id_lecTextBox.TabIndex = 9;
+            this.dS_Provincias.DataSetName = "DS_Provincias";
+            this.dS_Provincias.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // nombre_lecTextBox
+            // provinciasTableAdapter
             // 
-            this.nombre_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "nombre_lec", true));
-            this.nombre_lecTextBox.Location = new System.Drawing.Point(151, 68);
-            this.nombre_lecTextBox.Name = "nombre_lecTextBox";
-            this.nombre_lecTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nombre_lecTextBox.TabIndex = 10;
-            // 
-            // domicilio_lecTextBox
-            // 
-            this.domicilio_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "domicilio_lec", true));
-            this.domicilio_lecTextBox.Location = new System.Drawing.Point(151, 94);
-            this.domicilio_lecTextBox.Name = "domicilio_lecTextBox";
-            this.domicilio_lecTextBox.Size = new System.Drawing.Size(100, 20);
-            this.domicilio_lecTextBox.TabIndex = 11;
-            // 
-            // provincia_lecTextBox
-            // 
-            this.provincia_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "provincia_lec", true));
-            this.provincia_lecTextBox.Location = new System.Drawing.Point(151, 121);
-            this.provincia_lecTextBox.Name = "provincia_lecTextBox";
-            this.provincia_lecTextBox.Size = new System.Drawing.Size(100, 20);
-            this.provincia_lecTextBox.TabIndex = 12;
+            this.provinciasTableAdapter.ClearBeforeFill = true;
             // 
             // FM_Lectores
             // 
@@ -396,6 +460,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.gbEdicion.ResumeLayout(false);
             this.gbEdicion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Provincias)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -424,10 +489,15 @@
         private System.Windows.Forms.DataGridView lectoresDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.TextBox provincia_lecTextBox;
-        private System.Windows.Forms.TextBox domicilio_lecTextBox;
-        private System.Windows.Forms.TextBox nombre_lecTextBox;
-        private System.Windows.Forms.TextBox id_lecTextBox;
         private DS_LectoresTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.TextBox nombre_lecTextBox;
+        private System.Windows.Forms.TextBox domicilio_lecTextBox;
+        private System.Windows.Forms.TextBox provincia_lecTextBox;
+        private System.Windows.Forms.TextBox email_lecTextBox;
+        private System.Windows.Forms.DateTimePicker fecha_nacimiento_lecDateTimePicker;
+        private System.Windows.Forms.TextBox provincia_nombre_lecTextBox;
+        private System.Windows.Forms.Button bAssistProvincia;
+        private DS_Provincias dS_Provincias;
+        private DS_ProvinciasTableAdapters.provinciasTableAdapter provinciasTableAdapter;
     }
 }
