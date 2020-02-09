@@ -22,5 +22,20 @@ namespace BibliotecaJM
             InitializeComponent();
             this.usuarioActual = usuarioActual;
         }
+
+        private void usuariosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.usuariosBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dS_Usuarios);
+
+        }
+
+        private void FM_Listados_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dS_Usuarios.usuarios' Puede moverla o quitarla según sea necesario.
+            this.usuariosTableAdapter.Fill(this.dS_Usuarios.usuarios);
+
+        }
     }
 }

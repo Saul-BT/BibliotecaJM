@@ -78,19 +78,21 @@
             this.provinciasDataGridView.RowHeadersVisible = false;
             this.provinciasDataGridView.Size = new System.Drawing.Size(418, 413);
             this.provinciasDataGridView.TabIndex = 1;
-            this.provinciasDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.provinciasDataGridView_CellClick);
+            this.provinciasDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.provinciasDataGridView_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_pro";
             this.dataGridViewTextBoxColumn1.HeaderText = "id_pro";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "provincia_pro";
             this.dataGridViewTextBoxColumn2.HeaderText = "provincia_pro";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // FD_ListadoProvincias
             // 

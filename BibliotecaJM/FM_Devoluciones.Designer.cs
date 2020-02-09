@@ -39,23 +39,24 @@
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label label5;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bBuscarLibro = new System.Windows.Forms.Button();
             this.iddLibDev = new System.Windows.Forms.TextBox();
             this.idLibDev = new System.Windows.Forms.TextBox();
-            this.tituloLibDev = new System.Windows.Forms.TextBox();
-            this.bBuscarLibro = new System.Windows.Forms.Button();
             this.autorLibDev = new System.Windows.Forms.TextBox();
+            this.tituloLibDev = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nombreLecDev = new System.Windows.Forms.TextBox();
-            this.idLecDev = new System.Windows.Forms.TextBox();
-            this.domicilioLecDev = new System.Windows.Forms.TextBox();
             this.iddLecDiv = new System.Windows.Forms.TextBox();
+            this.idLecDev = new System.Windows.Forms.TextBox();
             this.fechs_penalizacionLecDev = new System.Windows.Forms.TextBox();
+            this.domicilioLecDev = new System.Windows.Forms.TextBox();
             this.dS_LibrosPrestados = new BibliotecaJM.DS_LibrosPrestados();
             this.librosPrestadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.librosPrestadosTableAdapter = new BibliotecaJM.DS_LibrosPrestadosTableAdapters.LibrosPrestadosTableAdapter();
             this.librosPrestadosDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_lec_pre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,32 +78,6 @@
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.bBuscarLibro);
-            this.groupBox1.Controls.Add(this.iddLibDev);
-            this.groupBox1.Controls.Add(id_lecLabel);
-            this.groupBox1.Controls.Add(this.idLibDev);
-            this.groupBox1.Controls.Add(fecha_penalizacion_lecLabel);
-            this.groupBox1.Controls.Add(nombre_lecLabel);
-            this.groupBox1.Controls.Add(this.autorLibDev);
-            this.groupBox1.Controls.Add(this.tituloLibDev);
-            this.groupBox1.Controls.Add(domicilio_lecLabel);
-            this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(27, 48);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(503, 172);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Búsqueda del libro";
-            // 
-            // iddLibDev
-            // 
-            this.iddLibDev.Location = new System.Drawing.Point(128, 61);
-            this.iddLibDev.Name = "iddLibDev";
-            this.iddLibDev.Size = new System.Drawing.Size(263, 20);
-            this.iddLibDev.TabIndex = 4;
-            // 
             // id_lecLabel
             // 
             id_lecLabel.AutoSize = true;
@@ -111,13 +86,6 @@
             id_lecLabel.Size = new System.Drawing.Size(59, 13);
             id_lecLabel.TabIndex = 1;
             id_lecLabel.Text = "Id del Libro";
-            // 
-            // idLibDev
-            // 
-            this.idLibDev.Location = new System.Drawing.Point(128, 35);
-            this.idLibDev.Name = "idLibDev";
-            this.idLibDev.Size = new System.Drawing.Size(263, 20);
-            this.idLibDev.TabIndex = 2;
             // 
             // fecha_penalizacion_lecLabel
             // 
@@ -137,13 +105,6 @@
             nombre_lecLabel.TabIndex = 3;
             nombre_lecLabel.Text = "Id Libro";
             // 
-            // tituloLibDev
-            // 
-            this.tituloLibDev.Location = new System.Drawing.Point(128, 87);
-            this.tituloLibDev.Name = "tituloLibDev";
-            this.tituloLibDev.Size = new System.Drawing.Size(263, 20);
-            this.tituloLibDev.TabIndex = 6;
-            // 
             // domicilio_lecLabel
             // 
             domicilio_lecLabel.AutoSize = true;
@@ -152,6 +113,70 @@
             domicilio_lecLabel.Size = new System.Drawing.Size(35, 13);
             domicilio_lecLabel.TabIndex = 5;
             domicilio_lecLabel.Text = "Título";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(21, 33);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(35, 13);
+            label1.TabIndex = 1;
+            label1.Text = "id lec:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(21, 136);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(116, 13);
+            label2.TabIndex = 7;
+            label2.Text = "fecha penalizacion lec:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(21, 83);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(62, 13);
+            label3.TabIndex = 3;
+            label3.Text = "nombre lec:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(21, 109);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(67, 13);
+            label4.TabIndex = 5;
+            label4.Text = "domicilio lec:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(21, 57);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(35, 13);
+            label5.TabIndex = 1;
+            label5.Text = "id lec:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.bBuscarLibro);
+            this.groupBox1.Controls.Add(this.iddLibDev);
+            this.groupBox1.Controls.Add(id_lecLabel);
+            this.groupBox1.Controls.Add(this.idLibDev);
+            this.groupBox1.Controls.Add(fecha_penalizacion_lecLabel);
+            this.groupBox1.Controls.Add(nombre_lecLabel);
+            this.groupBox1.Controls.Add(this.autorLibDev);
+            this.groupBox1.Controls.Add(this.tituloLibDev);
+            this.groupBox1.Controls.Add(domicilio_lecLabel);
+            this.groupBox1.Enabled = false;
+            this.groupBox1.Location = new System.Drawing.Point(27, 48);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(503, 172);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Búsqueda del libro";
             // 
             // bBuscarLibro
             // 
@@ -162,12 +187,33 @@
             this.bBuscarLibro.Text = "Buscar";
             this.bBuscarLibro.UseVisualStyleBackColor = true;
             // 
+            // iddLibDev
+            // 
+            this.iddLibDev.Location = new System.Drawing.Point(128, 61);
+            this.iddLibDev.Name = "iddLibDev";
+            this.iddLibDev.Size = new System.Drawing.Size(263, 20);
+            this.iddLibDev.TabIndex = 4;
+            // 
+            // idLibDev
+            // 
+            this.idLibDev.Location = new System.Drawing.Point(128, 35);
+            this.idLibDev.Name = "idLibDev";
+            this.idLibDev.Size = new System.Drawing.Size(263, 20);
+            this.idLibDev.TabIndex = 2;
+            // 
             // autorLibDev
             // 
             this.autorLibDev.Location = new System.Drawing.Point(128, 114);
             this.autorLibDev.Name = "autorLibDev";
             this.autorLibDev.Size = new System.Drawing.Size(263, 20);
             this.autorLibDev.TabIndex = 6;
+            // 
+            // tituloLibDev
+            // 
+            this.tituloLibDev.Location = new System.Drawing.Point(128, 87);
+            this.tituloLibDev.Name = "tituloLibDev";
+            this.tituloLibDev.Size = new System.Drawing.Size(263, 20);
+            this.tituloLibDev.TabIndex = 6;
             // 
             // groupBox2
             // 
@@ -196,14 +242,12 @@
             this.nombreLecDev.Size = new System.Drawing.Size(263, 20);
             this.nombreLecDev.TabIndex = 4;
             // 
-            // label1
+            // iddLecDiv
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(21, 33);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(35, 13);
-            label1.TabIndex = 1;
-            label1.Text = "id lec:";
+            this.iddLecDiv.Location = new System.Drawing.Point(143, 54);
+            this.iddLecDiv.Name = "iddLecDiv";
+            this.iddLecDiv.Size = new System.Drawing.Size(263, 20);
+            this.iddLecDiv.TabIndex = 2;
             // 
             // idLecDev
             // 
@@ -212,23 +256,12 @@
             this.idLecDev.Size = new System.Drawing.Size(263, 20);
             this.idLecDev.TabIndex = 2;
             // 
-            // label2
+            // fechs_penalizacionLecDev
             // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(21, 136);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(116, 13);
-            label2.TabIndex = 7;
-            label2.Text = "fecha penalizacion lec:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(21, 83);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(62, 13);
-            label3.TabIndex = 3;
-            label3.Text = "nombre lec:";
+            this.fechs_penalizacionLecDev.Location = new System.Drawing.Point(143, 133);
+            this.fechs_penalizacionLecDev.Name = "fechs_penalizacionLecDev";
+            this.fechs_penalizacionLecDev.Size = new System.Drawing.Size(263, 20);
+            this.fechs_penalizacionLecDev.TabIndex = 6;
             // 
             // domicilioLecDev
             // 
@@ -236,38 +269,6 @@
             this.domicilioLecDev.Name = "domicilioLecDev";
             this.domicilioLecDev.Size = new System.Drawing.Size(263, 20);
             this.domicilioLecDev.TabIndex = 6;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(21, 109);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(67, 13);
-            label4.TabIndex = 5;
-            label4.Text = "domicilio lec:";
-            // 
-            // iddLecDiv
-            // 
-            this.iddLecDiv.Location = new System.Drawing.Point(143, 54);
-            this.iddLecDiv.Name = "iddLecDiv";
-            this.iddLecDiv.Size = new System.Drawing.Size(263, 20);
-            this.iddLecDiv.TabIndex = 2;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(21, 57);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(35, 13);
-            label5.TabIndex = 1;
-            label5.Text = "id lec:";
-            // 
-            // fechs_penalizacionLecDev
-            // 
-            this.fechs_penalizacionLecDev.Location = new System.Drawing.Point(143, 133);
-            this.fechs_penalizacionLecDev.Name = "fechs_penalizacionLecDev";
-            this.fechs_penalizacionLecDev.Size = new System.Drawing.Size(263, 20);
-            this.fechs_penalizacionLecDev.TabIndex = 6;
             // 
             // dS_LibrosPrestados
             // 
@@ -292,6 +293,7 @@
             this.librosPrestadosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.librosPrestadosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
+            this.id_lec_pre,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
@@ -302,6 +304,7 @@
             this.librosPrestadosDataGridView.ReadOnly = true;
             this.librosPrestadosDataGridView.Size = new System.Drawing.Size(948, 363);
             this.librosPrestadosDataGridView.TabIndex = 18;
+            this.librosPrestadosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.librosPrestadosDataGridView_CellContentClick);
             // 
             // groupBox3
             // 
@@ -318,29 +321,41 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_lib";
             this.dataGridViewTextBoxColumn1.HeaderText = "id_lib";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // id_lec_pre
+            // 
+            this.id_lec_pre.DataPropertyName = "id_lec_pre";
+            this.id_lec_pre.HeaderText = "id_lec_pre";
+            this.id_lec_pre.Name = "id_lec_pre";
+            this.id_lec_pre.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "titulo_lib";
             this.dataGridViewTextBoxColumn2.HeaderText = "titulo_lib";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "fecha_presta_pre";
             this.dataGridViewTextBoxColumn3.HeaderText = "fecha_presta_pre";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "fecha_devol_pre";
             this.dataGridViewTextBoxColumn4.HeaderText = "fecha_devol_pre";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Text = "Realizar la devolución";
             this.Column1.UseColumnTextForButtonValue = true;
             // 
@@ -385,6 +400,7 @@
         private System.Windows.Forms.DataGridView librosPrestadosDataGridView;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_lec_pre;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;

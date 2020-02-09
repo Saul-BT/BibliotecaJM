@@ -345,6 +345,7 @@
             // 
             this.provincia_nombre_lecTextBox.Location = new System.Drawing.Point(189, 89);
             this.provincia_nombre_lecTextBox.Name = "provincia_nombre_lecTextBox";
+            this.provincia_nombre_lecTextBox.ReadOnly = true;
             this.provincia_nombre_lecTextBox.Size = new System.Drawing.Size(242, 20);
             this.provincia_nombre_lecTextBox.TabIndex = 21;
             // 
@@ -381,6 +382,7 @@
             this.provincia_lecTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lectoresBindingSource, "provincia_lec", true));
             this.provincia_lecTextBox.Location = new System.Drawing.Point(151, 89);
             this.provincia_lecTextBox.Name = "provincia_lecTextBox";
+            this.provincia_lecTextBox.ReadOnly = true;
             this.provincia_lecTextBox.Size = new System.Drawing.Size(32, 20);
             this.provincia_lecTextBox.TabIndex = 15;
             // 

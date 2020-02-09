@@ -76,6 +76,7 @@ namespace BibliotecaJM
         private void bNuevo_Click(object sender, EventArgs e)
         {
             ModoEdicion();
+            provincia_nombre_lecTextBox.Text = null;
             nombre_lecTextBox.Focus();
             lectoresBindingSource.AddNew();
         }

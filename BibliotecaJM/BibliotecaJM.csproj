@@ -94,6 +94,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Usuarios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FD_Secciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FD_Secciones.Designer.cs">
+      <DependentUpon>FD_Secciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FM_Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,14 +160,25 @@
     <Compile Include="FD_ListadoProvincias.Designer.cs">
       <DependentUpon>FD_ListadoProvincias.cs</DependentUpon>
     </Compile>
+    <Compile Include="lectoresDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lectoresDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioActual.cs" />
+    <EmbeddedResource Include="FD_Secciones.resx">
+      <DependentUpon>FD_Secciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FM_Devoluciones.resx">
       <DependentUpon>FM_Devoluciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FM_Lectores.resx">
       <DependentUpon>FM_Lectores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FM_Libros.resx">
+      <DependentUpon>FM_Libros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FM_Listados.resx">
       <DependentUpon>FM_Listados.cs</DependentUpon>
@@ -285,6 +302,17 @@
     </None>
     <None Include="DS_Usuarios.xss">
       <DependentUpon>DS_Usuarios.xsd</DependentUpon>
+    </None>
+    <None Include="lectoresDS.xsc">
+      <DependentUpon>lectoresDS.xsd</DependentUpon>
+    </None>
+    <None Include="lectoresDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lectoresDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lectoresDS.xss">
+      <DependentUpon>lectoresDS.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

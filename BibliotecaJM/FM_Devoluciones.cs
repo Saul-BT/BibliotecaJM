@@ -29,5 +29,20 @@ namespace BibliotecaJM
             this.librosPrestadosTableAdapter.Fill(this.dS_LibrosPrestados.LibrosPrestados);
 
         }
+
+        private void librosPrestadosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (librosPrestadosDataGridView.Columns[e.ColumnIndex] is DataGridViewButtonColumn
+                && e.RowIndex >= 0)
+            {
+                int posSeleccionada = librosPrestadosBindingSource.Position;
+
+                int idLib = int.Parse(librosPrestadosDataGridView[0, posSeleccionada].Value.ToString());
+                int idLec = int.Parse(librosPrestadosDataGridView[1, posSeleccionada].Value.ToString());
+
+                librosPrestadosBindingSource.RemoveCurrent();
+                librosPrestadosBindingSource.EndEdit();
+            }
+        }
     }
 }
