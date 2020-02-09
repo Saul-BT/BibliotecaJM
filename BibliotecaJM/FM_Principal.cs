@@ -12,7 +12,7 @@ namespace BibliotecaJM
 {
     public partial class FM_Principal : Form
     {
-        UsuarioActual usuarioActual = new UsuarioActual();
+        public UsuarioActual usuarioActual = new UsuarioActual();
         public FM_Principal()
         {
             InitializeComponent();
@@ -20,8 +20,14 @@ namespace BibliotecaJM
 
         private void FM_Principal_Load(object sender, EventArgs e)
         {
-            usuarioActual.Nombre = "admin";
-            usuarioActual.TipoUsuario = "A";
+            FD_PedirUsuario pedirUsu = new FD_PedirUsuario();
+
+            pedirUsu.ShowDialog();
+
+            if (pedirUsu.Usuario == null) this.Close();
+            usuarioActual.Nombre = pedirUsu.Usuario;
+            usuarioActual.TipoUsuario = pedirUsu.TipoUsuario;
+
             VisualizarFormularioYTítulo(new FM_Listados(usuarioActual), "Listados");
         }
         private void tsbLectores_Click(object sender, EventArgs e)

@@ -94,6 +94,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Usuarios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FD_PedirUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FD_PedirUsuario.Designer.cs">
+      <DependentUpon>FD_PedirUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FD_Secciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioActual.cs" />
+    <EmbeddedResource Include="FD_PedirUsuario.resx">
+      <DependentUpon>FD_PedirUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FD_Secciones.resx">
       <DependentUpon>FD_Secciones.cs</DependentUpon>
     </EmbeddedResource>
